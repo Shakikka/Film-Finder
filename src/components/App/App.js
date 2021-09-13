@@ -40,14 +40,11 @@ const App = () => {
           return (
             <div className='main-container'>
               <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} setGenre={setGenre}/>
-              <Movies movies={movies} searchTerm={searchTerm} genre={genre}/>
+              <Movies movies={movies} searchTerm={searchTerm} genre={genre} getMovieDetails={getMovieDetails}/>
             </div>
           )}}
         />
-        <Route exact path='/:id' render={({ match }) => {
-            const { id } = match.params
-            console.log(id)
-            getMovieDetails(id)
+        <Route exact path='/:id' render={() => {
             return <MovieDetails movieDetails={movieDetails}/>
           }}
         />
