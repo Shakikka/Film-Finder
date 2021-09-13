@@ -1,6 +1,6 @@
 import './SearchBar.css';
 
-const SearchBar = ({}) => {
+const SearchBar = ({ searchTerm, setSearchTerm }) => {
 
 
 
@@ -27,6 +27,14 @@ const SearchBar = ({}) => {
                 <option value='thriller'>thriller</option>
                 <option value='western'>western</option>
             </select>
+            <input 
+                className='search-bar'
+                type='text'
+                placeholder='Search by Title'
+                name='searchTerm'
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+            />
         </form>
     )
 }
