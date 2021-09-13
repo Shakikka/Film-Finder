@@ -8,6 +8,7 @@ import './App.css';
 const App = () => {
 
   const [movies, setMovies] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
 
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const App = () => {
         <Route exact path='/' render={() => {
           return (
             <div className='main-container'>
-              <Header/>
+              <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
               <Movies movies={movies}/>
             </div>
           )}}
