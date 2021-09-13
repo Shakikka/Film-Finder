@@ -4,6 +4,8 @@
     justify-content: center;
     width: 50%;
     align-self: center;
+    border: solid #98daf2;
+    border-radius: 5px;
     
 }
 
@@ -14,11 +16,11 @@
     height: 250px;
     width: 150px;
     margin: 5px;
-    color: black;
+    color: white;
 }
 
 .movie-card > img {
     height: 200px;
     width: 150px;
-    border-radius: 5px;;
+    border-radius: 5px;
 }
