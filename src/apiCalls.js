@@ -18,9 +18,10 @@ export const fetchMovies = () => {
 }
 
 export const fetchMovieDetails = id => {
-    return fetch(url + '/' + id, {
+    return fetch(`${url}/${id}`, {
         headers: {
             Authorization: 'Api-Key q3MNxtfep8Gt',
         },
     })
+    .then(checkForError)
 }
