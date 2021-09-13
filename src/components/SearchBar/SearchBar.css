@@ -1,0 +1,22 @@
+form {
+    align-self: center;
+    display: flex;
+}
+
+.genres {
+    border-radius: 5px 0px 0px 5px;
+    border-width: 2px 0px 2px 2px;
+}
+
+.search-bar {
+    border-radius: 0px, 5px 5px 0px;
+    height: 25px;
+    border-width: 2px 2px 2px 0px;
+}
+
+.genres,
+.search-bar {
+    background-color: #dfa237;
+    outline: none;
+    border-color: black;
+}
