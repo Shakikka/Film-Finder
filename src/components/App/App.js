@@ -1,6 +1,8 @@
 import { Switch, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovies } from '../../apiCalls';
+import Movies from '../Movies/Movies';
+import Header from '../Header/Header';
 import './App.css';
 
 const App = () => {
@@ -23,7 +25,13 @@ const App = () => {
   return (
     <div className='App'>
       <Switch>
-        <Route exact path='/'/>
+        <Route exact path='/' render={() => {
+          return (
+            <div className='main-container'>
+          
+            </div>
+          )}}
+        />
       </Switch>
     </div>
     )
