@@ -6,7 +6,7 @@
     align-self: center;
     border: solid #98daf2;
     border-radius: 5px;
-    
+    font-family: 'Righteous', cursive;
 }
 
 .movie-card {
@@ -17,11 +17,15 @@
     width: 150px;
     margin: 5px;
     color: white;
-    font-family: 'Righteous', cursive;
+    
 }
 
 .movie-card > img {
     height: 200px;
     width: 150px;
     border-radius: 5px;
+}
+
+.sorry {
+    color: white;
 }
