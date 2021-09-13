@@ -3,6 +3,9 @@ header {
     justify-content: space-between;
     width: 50%;
     align-self: center;
+    color: white;
+    background-color: #C93F25;
+    box-shadow: 2px -2px #dfa237;
 }
 
 .logo {
