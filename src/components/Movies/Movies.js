@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import './Movies.css';
 
-const Movies = ({ movies, searchTerm }) => {
-
+const Movies = ({ genre, movies, searchTerm }) => {
+    
     const shownMovies = movies.filter(movie => {
-        if (!searchTerm) {
+        if (!searchTerm && !genre) {
             return movie
-        } else if (movie.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+        } else if (movie.genres.join(' ').toLowerCase().includes(genre) && movie.title.toLowerCase().includes(searchTerm.toLowerCase())) {
             return movie
         } else {
             return false
@@ -19,7 +19,6 @@ const Movies = ({ movies, searchTerm }) => {
             </Link>
         )
     })
-    
     
     return (
         <section className='movie-cards-box'>

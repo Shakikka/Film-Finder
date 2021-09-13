@@ -20,6 +20,7 @@ const App = () => {
     getMovies()
       .then(movies => {
         setMovies(movies.data)
+        console.log(movies.data)
       })
   }
 
