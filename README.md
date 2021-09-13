@@ -45,3 +45,4 @@ Film Finder is a web app similar to Rotten Tomatoes that shows users movies, and
 - Cypress testing
 - unit testing
 - convert to typescript
+- Travis CI
