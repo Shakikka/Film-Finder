@@ -9,6 +9,7 @@ const App = () => {
 
   const [movies, setMovies] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
+  const [genre, setGenre] = useState('')
 
 
   useEffect(() => {
@@ -28,8 +29,8 @@ const App = () => {
         <Route exact path='/' render={() => {
           return (
             <div className='main-container'>
-              <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-              <Movies movies={movies} searchTerm={searchTerm}/>
+              <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} setGenre={setGenre}/>
+              <Movies movies={movies} searchTerm={searchTerm} genre={genre}/>
             </div>
           )}}
         />
