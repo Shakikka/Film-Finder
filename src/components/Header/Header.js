@@ -1,7 +1,7 @@
 import './Header';
 
 const Header = ({}) => {
-    return
+    return <p>Header</p>
 }
 
 export default Header;

@@ -28,7 +28,8 @@ const App = () => {
         <Route exact path='/' render={() => {
           return (
             <div className='main-container'>
-          
+              <Header/>
+              <Movies movies={movies}/>
             </div>
           )}}
         />
