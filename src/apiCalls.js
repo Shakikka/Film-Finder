@@ -8,11 +8,19 @@ const checkForError = (response) => {
     }
 }
 
-export const getMovies = () => {
+export const fetchMovies = () => {
     return fetch(url, {
         headers: {
             Authorization: 'Api-Key q3MNxtfep8Gt',
         },
     })
     .then(checkForError)
+}
+
+export const fetchMovieDetails = id => {
+    return fetch(url + '/' + id, {
+        headers: {
+            Authorization: 'Api-Key q3MNxtfep8Gt',
+        },
+    })
 }

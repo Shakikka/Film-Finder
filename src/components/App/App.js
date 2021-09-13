@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getMovies } from '../../apiCalls';
+import { fetchMovies, fetchMovieDetails } from '../../apiCalls';
 import Movies from '../Movies/Movies';
 import Header from '../Header/Header';
 import MovieDetails from '../MovieDetails/MovieDetails';
@@ -14,16 +14,18 @@ const App = () => {
 
 
   useEffect(() => {
-    fetchMovies()
+    getMovies()
   }, [])
 
-  const fetchMovies = () => {
-    getMovies()
+  const getMovies = () => {
+    fetchMovies()
       .then(movies => {
         setMovies(movies.data)
         console.log(movies.data)
       })
   }
+
+  const getMovieDetails = id =>
 
   return (
     <div className='App'>
