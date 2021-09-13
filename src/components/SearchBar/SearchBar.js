@@ -1,13 +1,16 @@
 import './SearchBar.css';
 
-const SearchBar = ({ searchTerm, setSearchTerm }) => {
+const SearchBar = ({ setGenre, searchTerm, setSearchTerm }) => {
 
-
+    const handleGenreChange = e => {
+        setGenre(e.target.value)
+        console.log(e.target.value)
+    }
 
 
     return (
         <form>
-            <select className='genres'>
+            <select className='genres' onChange={handleGenreChange}>
                 <option value=''>all genres</option>
                 <option value='action'>action</option>
                 <option value='adventure'>adventure</option>
