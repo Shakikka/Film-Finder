@@ -1,0 +1,15 @@
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 250px;
+    width: 150px;
+    margin: 5px;
+    color: white;
+}
+
+.movie-card > img {
+    height: 200px;
+    width: 150px;
+    border-radius: 5px;;
+}
