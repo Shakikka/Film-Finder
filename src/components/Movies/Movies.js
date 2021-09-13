@@ -24,7 +24,7 @@ const Movies = ({ movies, searchTerm }) => {
     return (
         <section className='movie-cards-box'>
            {shownMovies && shownMovies}
-           {!shownMovies.length && <p>We're sorry, but there are no matches for your search.</p>}
+           {!shownMovies.length && <p className='sorry'>We're sorry, but there are no matches for your search.</p>}
         </section>
     )
 }
