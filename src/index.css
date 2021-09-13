@@ -8,3 +8,12 @@ html {
 a {
     text-decoration: none;
 }
+
+@font-face {
+    font-family: 'orthodox_herbertarianregular';
+    src: url('assets/orthodoxherbertarian.woff2') format('woff2'),
+         url('assets/orthodoxherbertarian.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

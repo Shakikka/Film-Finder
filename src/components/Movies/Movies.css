@@ -17,6 +17,7 @@
     width: 150px;
     margin: 5px;
     color: white;
+    font-family: 'Righteous', cursive;
 }
 
 .movie-card > img {
