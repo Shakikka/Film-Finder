@@ -11,6 +11,7 @@ const App = () => {
   const [movies, setMovies] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [genre, setGenre] = useState('')
+  const [movieDetails, setMovieDetails] = useState([])
 
 
   useEffect(() => {
@@ -21,11 +22,16 @@ const App = () => {
     fetchMovies()
       .then(movies => {
         setMovies(movies.data)
-        console.log(movies.data)
       })
   }
 
-  const getMovieDetails = id =>
+  const getMovieDetails = id => {
+    fetchMovieDetails(id)
+      .then(movie => {
+        setMovieDetails(movie.data)
+        console.log(movie.data)
+      })
+  }
 
   return (
     <div className='App'>
@@ -40,8 +46,9 @@ const App = () => {
         />
         <Route exact path='/:id' render={({ match }) => {
             const { id } = match.params
-            const clickedMovie= movies.find(movie => movie.id === Number(id))
-            return <MovieDetails movieDetails={clickedMovie}/>
+            console.log(id)
+            getMovieDetails(id)
+            return <MovieDetails movieDetails={movieDetails}/>
           }}
         />
       </Switch>
