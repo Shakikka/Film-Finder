@@ -6,6 +6,7 @@ header {
     color: white;
     background-color: #C93F25;
     box-shadow: 2px -2px #dfa237;
+    min-width: 350px;
 }
 
 .logo {
