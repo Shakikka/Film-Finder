@@ -18,7 +18,6 @@ const App = () => {
   const fetchMovies = () => {
     getMovies()
       .then(movies => {
-        console.log(movies.data)
         setMovies(movies.data)
       })
   }
@@ -30,7 +29,7 @@ const App = () => {
           return (
             <div className='main-container'>
               <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-              <Movies movies={movies}/>
+              <Movies movies={movies} searchTerm={searchTerm}/>
             </div>
           )}}
         />
