@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { getMovies } from '../../apiCalls';
 import Movies from '../Movies/Movies';
 import Header from '../Header/Header';
+import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
 
 const App = () => {
@@ -34,6 +35,12 @@ const App = () => {
               <Movies movies={movies} searchTerm={searchTerm} genre={genre}/>
             </div>
           )}}
+        />
+        <Route exact path='/:id' render={({ match }) => {
+            const { id } = match.params
+            const clickedMovie= movies.find(movie => movie.id === Number(id))
+            return <MovieDetails movieDetails={clickedMovie}/>
+          }}
         />
       </Switch>
     </div>
