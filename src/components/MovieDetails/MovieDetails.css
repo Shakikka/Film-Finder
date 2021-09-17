@@ -12,6 +12,12 @@
     border-radius: 5px;
 }
 
+.background-box {
+    background-color: rgba(5, 4, 0, .75);
+    width: inherit;
+    height: inherit;
+}
+
 ul {
     list-style-type: none;
 }
