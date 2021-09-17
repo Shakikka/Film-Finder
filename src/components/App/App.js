@@ -45,7 +45,11 @@ const App = () => {
         />
         <Route exact path='/:id' render={({ match }) => {
             const { id } = match.params
-            return <MovieDetails movieDetails={movieDetails} setMovieId={setMovieId} id={id}/>
+            return (
+              <div className='movie-details-container'>
+                <MovieDetails movieDetails={movieDetails} setMovieId={setMovieId} id={id}/>
+              </div>
+            )
           }}
         />
       </Switch>
