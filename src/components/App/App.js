@@ -14,7 +14,6 @@ const App = () => {
   const [movieDetails, setMovieDetails] = useState([])
   const [movieId, setMovieId] = useState('')
 
-
   useEffect(() => {
     getMovies()
   }, [])
@@ -23,25 +22,15 @@ const App = () => {
     fetchMovieDetails(movieId)
       .then(movie => {
         setMovieDetails(movie.data)
-        console.log(movie.data)
       })
-      console.log('meow')
   }, [movieId])
 
-  const getMovies = () => {
+  const getMovies =  () => {
     fetchMovies()
       .then(movies => {
         setMovies(movies.data)
       })
   }
-
-  // const getMovieDetails = () => {
-  //   fetchMovieDetails(movieId)
-  //     .then(movie => {
-  //       setMovieDetails(movie.data)
-  //       console.log(movie.data)
-  //     })
-  // }
 
   return (
     <div className='App'>
