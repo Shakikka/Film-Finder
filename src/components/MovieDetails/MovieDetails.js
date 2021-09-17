@@ -1,19 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { fetchMovieDetails } from '../../apiCalls';
 import './MovieDetails.css';
 
-const MovieDetails = ({ movieDetails, setMovieId, id }) => {
-
-    const { description, duration, releaseDate, genres, topCast, title } = movieDetails
-    const backgroundImage = { 
-        backgroundImage: 'url(/assets/movieHeroImages/' + id + '.jpeg), url(/assets/movieHeroImages/defaultImage.jpeg)'
-    }
+const MovieDetails = ({ id }) => {
+    
+    const [movieDetails, setMovieDetails] = useState({})
 
     useEffect(() => {
-        setMovieId(id)
-    }, [setMovieId, id])
+        fetchMovieDetails(id)
+        .then(movie => {
+            setMovieDetails(movie.data)
+        })
+    }, [id])
 
-
-    console.log('movieDetails', movieDetails)
+    const { description, duration, releaseDate, genres, topCast, title } = movieDetails
+    const backgroundImage = { backgroundImage: 'url(/assets/movieHeroImages/' + id + '.jpeg), url(/assets/movieHeroImages/defaultImage.jpeg)'}
+    
     return (
         <section className='movie-details' style={backgroundImage}>
             <div className='background-box'>
