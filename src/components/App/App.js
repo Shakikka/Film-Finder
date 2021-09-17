@@ -12,24 +12,23 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [genre, setGenre] = useState('')
   const [movieDetails, setMovieDetails] = useState([])
-
+  const [movieId, setMovieId] = useState('')
 
   useEffect(() => {
     getMovies()
   }, [])
 
-  const getMovies = () => {
+  useEffect(() => {
+    fetchMovieDetails(movieId)
+      .then(movie => {
+        setMovieDetails(movie.data)
+      })
+  }, [movieId])
+
+  const getMovies =  () => {
     fetchMovies()
       .then(movies => {
         setMovies(movies.data)
-      })
-  }
-
-  const getMovieDetails = id => {
-    fetchMovieDetails(id)
-      .then(movie => {
-        setMovieDetails(movie.data)
-        console.log(movie.data)
       })
   }
 
@@ -40,15 +39,17 @@ const App = () => {
           return (
             <div className='main-container'>
               <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} setGenre={setGenre}/>
-              <Movies movies={movies} searchTerm={searchTerm} genre={genre}/>
+              <Movies movies={movies} searchTerm={searchTerm} genre={genre} setMovieId={setMovieId}/>
             </div>
           )}}
         />
         <Route exact path='/:id' render={({ match }) => {
             const { id } = match.params
-            console.log(id)
-            getMovieDetails(id)
-            return <MovieDetails movieDetails={movieDetails}/>
+            return (
+              <div className='movie-details-container'>
+                <MovieDetails movieDetails={movieDetails} setMovieId={setMovieId} id={id}/>
+              </div>
+            )
           }}
         />
       </Switch>

@@ -1,4 +1,8 @@
-.main-container {
+.main-container,
+.movie-details-container {
     display: flex;
     flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Righteous', cursive;
 }

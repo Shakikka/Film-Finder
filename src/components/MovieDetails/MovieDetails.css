@@ -1,3 +1,31 @@
 .title {
     color: white;
 }
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    width: 1200px;
+    height: 675px;
+    border-radius: 10px;
+}
+
+.background-box {
+    background-color: rgba(5, 4, 0, .75);
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h3,
+h4,
+h5,
+ul {
+    color: white;
+}
