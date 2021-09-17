@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Movies.css';
 
-const Movies = ({ genre, movies, searchTerm, getMovieDetails }) => {
+const Movies = ({ genre, movies, searchTerm }) => {
     
     const shownMovies = movies.filter(movie => {
         if (!searchTerm && !genre) {
@@ -13,7 +13,7 @@ const Movies = ({ genre, movies, searchTerm, getMovieDetails }) => {
         }
     }).map(movie => {
         return (
-            <Link to={`/${movie.id}`} key={movie.id} className='movie-card' onClick={() => getMovieDetails(movie.id)}>
+            <Link to={`/${movie.id}`} key={movie.id} className='movie-card'>
                 <img src={`/assets/moviePosterImages/${movie.id}.jpeg`} alt={`${movie.title} poster`} />
                 {movie.title}
             </Link>
