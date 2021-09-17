@@ -17,14 +17,15 @@
 
 Film Finder is a web app similar to Rotten Tomatoes that shows users movies, and allows them to filter by genre, search by title, and click on a selected movie for more information about that movie. 
  
-## Tech Stack
+## Tech Stack:
 
-### Front-End:
 - JavaScript ECMA6
   - React (create-react-app)
   - React Router
 - HTML5
 - CSS3
+- Cypress
+- TravisCI
 
 ## Instructions for Installation
    - Can visit the deployed app [here](http://film-finder17.herokuapp.com/)
@@ -40,9 +41,7 @@ Film Finder is a web app similar to Rotten Tomatoes that shows users movies, and
     
 ## Future Iterations
 
-- fix the getMovieDetails function so that it doesn't ping the api infinitely.
 - flesh out the MovieDetails page
 - Cypress testing
 - unit testing
 - convert to typescript
-- Travis CI
