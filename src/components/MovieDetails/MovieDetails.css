@@ -9,13 +9,14 @@
     justify-self: center;
     width: 1200px;
     height: 675px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .background-box {
     background-color: rgba(5, 4, 0, .75);
     width: inherit;
     height: inherit;
+    border-radius: inherit;
 }
 
 ul {
