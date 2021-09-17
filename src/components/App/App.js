@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { fetchMovies, fetchMovieDetails } from '../../apiCalls';
+import { fetchMovies } from '../../apiCalls';
 import Movies from '../Movies/Movies';
 import Header from '../Header/Header';
 import MovieDetails from '../MovieDetails/MovieDetails';
@@ -11,26 +11,17 @@ const App = () => {
   const [movies, setMovies] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [genre, setGenre] = useState('')
-  const [movieDetails, setMovieDetails] = useState([])
-  const [movieId, setMovieId] = useState('')
-
-  useEffect(() => {
-    getMovies()
-  }, [])
-
-  useEffect(() => {
-    fetchMovieDetails(movieId)
-      .then(movie => {
-        setMovieDetails(movie.data)
-      })
-  }, [movieId])
-
+  
   const getMovies =  () => {
     fetchMovies()
       .then(movies => {
         setMovies(movies.data)
       })
   }
+
+  useEffect(() => {
+    getMovies()
+  }, [])
 
   return (
     <div className='App'>
@@ -39,7 +30,7 @@ const App = () => {
           return (
             <div className='main-container'>
               <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} setGenre={setGenre}/>
-              <Movies movies={movies} searchTerm={searchTerm} genre={genre} setMovieId={setMovieId}/>
+              <Movies movies={movies} searchTerm={searchTerm} genre={genre}/>
             </div>
           )}}
         />
@@ -47,7 +38,7 @@ const App = () => {
             const { id } = match.params
             return (
               <div className='movie-details-container'>
-                <MovieDetails movieDetails={movieDetails} setMovieId={setMovieId} id={id}/>
+                <MovieDetails id={id}/>
               </div>
             )
           }}
