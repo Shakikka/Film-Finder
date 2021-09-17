@@ -9,9 +9,11 @@ const MovieDetails = ({ movieDetails, setMovieId, id }) => {
         setMovieId(id)
     }, [setMovieId, id])
 
+    const backgroundImage = { backgroundImage: 'url(/assets/movieHeroImages/' + id + '.jpeg), url(/assets/movieHeroImages/defaultImage.jpeg)'}
+
     console.log('movieDetails', movieDetails)
     return (
-        <section className='movie-details' style={{backgroundImage: `url(/assets/movieHeroImages/${id}.jpeg)`}}>
+        <section className='movie-details' style={ backgroundImage }>
             <div className='background-box'>
                 <h2 className='title'>{title}</h2>
                 <h3>{description}</h3>
