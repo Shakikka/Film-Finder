@@ -4,16 +4,18 @@ import './MovieDetails.css';
 const MovieDetails = ({ movieDetails, setMovieId, id }) => {
 
     const { description, duration, releaseDate, genres, topCast, title } = movieDetails
+    const backgroundImage = { 
+        backgroundImage: 'url(/assets/movieHeroImages/' + id + '.jpeg), url(/assets/movieHeroImages/defaultImage.jpeg)'
+    }
 
     useEffect(() => {
         setMovieId(id)
     }, [setMovieId, id])
 
-    const backgroundImage = { backgroundImage: 'url(/assets/movieHeroImages/' + id + '.jpeg), url(/assets/movieHeroImages/defaultImage.jpeg)'}
 
     console.log('movieDetails', movieDetails)
     return (
-        <section className='movie-details' style={ backgroundImage }>
+        <section className='movie-details' style={backgroundImage}>
             <div className='background-box'>
                 <h2 className='title'>{title}</h2>
                 <h3>{description}</h3>
