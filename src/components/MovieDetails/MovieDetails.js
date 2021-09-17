@@ -12,7 +12,7 @@ const MovieDetails = ({ movieDetails, setMovieId, id }) => {
         <section className='movie-details' style={{backgroundImage: `url(/assets/movieHeroImages/${movieDetails.id}.jpeg)`}}>
             <h2 className='title'>{movieDetails.title}</h2>
             <h3>{movieDetails.description}</h3>
-            {/* <h4>{new Date(movieDetails.duration * 1000).toISOString().substr(11, 8)}</h4> */}
+            <h4>{movieDetails.duration && new Date(movieDetails.duration * 1000).toISOString().substr(11, 8)}</h4>
         </section>
     )
 }
