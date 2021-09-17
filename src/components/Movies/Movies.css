@@ -22,6 +22,10 @@
     
 }
 
+.movie-card:hover {
+    transform: scale(1.5) rotate(2deg)
+}
+
 .movie-card > img {
     height: 200px;
     width: 150px;
