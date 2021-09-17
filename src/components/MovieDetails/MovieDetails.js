@@ -7,10 +7,10 @@ const MovieDetails = ({ movieDetails, setMovieId, id }) => {
         setMovieId(id)
     }, [setMovieId, id])
 
-    console.log(movieDetails)
+    console.log('movieDetails', movieDetails)
     return (
         <section>
-            <p className='title'>{movieDetails ? movieDetails.title : 'Loading...'}</p>
+            <p className='title'>{movieDetails.title}</p>
         </section>
     )
 }
