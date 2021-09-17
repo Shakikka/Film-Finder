@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- node
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: film-finder17
+  on:
+    branch: main
+  skip_cleanup: true
