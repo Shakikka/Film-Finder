@@ -4,7 +4,7 @@ const SearchBar = ({ setGenre, searchTerm, setSearchTerm }) => {
 
     return (
         <form>
-            <select className='genres' onChange={e => setGenre(e.target.value)}>
+            <select className='genres' aria-label='select a genre' onChange={e => setGenre(e.target.value)}>
                 <option value=''>all genres</option>
                 <option value='action'>action</option>
                 <option value='adventure'>adventure</option>
@@ -25,6 +25,7 @@ const SearchBar = ({ setGenre, searchTerm, setSearchTerm }) => {
                 <option value='western'>western</option>
             </select>
             <input 
+                aria-label='enter a title keyword'
                 className='search-bar'
                 type='text'
                 placeholder='Search by Title'
