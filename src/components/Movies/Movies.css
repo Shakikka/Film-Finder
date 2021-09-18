@@ -16,15 +16,20 @@
     flex-direction: column;
     box-sizing: border-box;
     height: 250px;
-    width: 150px;
+    width: 134px;
     margin: 5px;
     color: white;
     
 }
 
+.movie-card:hover {
+    transform: scale(1.1) rotate(2deg);
+    transition: .2s;
+}
+
 .movie-card > img {
-    height: 200px;
-    width: 150px;
+    max-height: 201px;
+    max-width: 134px;
     border-radius: 5px;
 }
 
